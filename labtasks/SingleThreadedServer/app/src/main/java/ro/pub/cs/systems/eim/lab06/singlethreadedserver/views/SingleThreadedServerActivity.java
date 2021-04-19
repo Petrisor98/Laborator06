@@ -46,11 +46,17 @@ public class SingleThreadedServerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_threaded_server);
 
-        serverTextEditText = (EditText)findViewById(R.id.server_text_edit_text);
+        serverTextEditText = findViewById(R.id.server_text_edit_text);
         serverTextEditText.addTextChangedListener(serverTextContentWatcher);
     }
 
     // TODO exercise 5b
     // overwrite method onDestroy() in order to stop the serverThread on it
     // only if it has been initialized before
+    // free the resources
+    protected void onDestroy() {
+        if (serverThread != null)
+            serverThread.stopServer();
+        super.onDestroy();
+    }
 }

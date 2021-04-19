@@ -32,11 +32,11 @@ public class FTPServerWelcomeMessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ftpserver_welcome_message);
 
-        FTPServerAddressEditText = (EditText)findViewById(R.id.ftp_server_address_edit_text);
+        FTPServerAddressEditText = findViewById(R.id.ftp_server_address_edit_text);
 
-        displayWelcomeMessageButton = (Button)findViewById(R.id.display_welcome_message_button);
+        displayWelcomeMessageButton = findViewById(R.id.display_welcome_message_button);
         displayWelcomeMessageButton.setOnClickListener(buttonClickListener);
 
-        welcomeMessageTextView = (TextView)findViewById(R.id.welcome_message_text_view);
+        welcomeMessageTextView = findViewById(R.id.welcome_message_text_view);
     }
 }
